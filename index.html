@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="dist/style.css" rel="stylesheet" />
+    <title>Frontend Mentor | Mortgage repayment calculator</title>
+  </head>
+  <body
+    class="font-PlusJakartaSans font-[500] bg-Slate100 sm:px-5 sm:py-20 sm:flex sm:items-center sm:justify-center min-h-[100dvh]"
+  >
+    <main
+      class="sm:flex sm:bg-white sm:rounded-2xl max-w-[1050px] mx-auto w-full"
+    >
+      <form
+        class="px-5 py-5 lg:py-10 lg:px-10 sm:w-[50%] bg-white sm:rounded-l-2xl"
+      >
+        <div class="md:flex md:items-center md:justify-between">
+          <h1 class="font-[700] text-Slate900 text-2xl">Mortgage Calculator</h1>
+          <p
+            class="w-fit text-Slate700 relative after:content-[''] after:w-full after:h-[2px] after:bg-Slate500 after:absolute after:bottom-[2px] after:left-0 mt-2 cursor-pointer after:rounded-full"
+            id="clearAll"
+          >
+            Clear All
+          </p>
+        </div>
+        <div class="mt-7 flex flex-col gap-y-6">
+          <div class="flex flex-col">
+            <label for="" class="text-Slate700">Mortgage Amount</label>
+            <div class="relative w-full mt-2">
+              <input
+                class="py-2 rounded-md w-full outline-none border border-Slate700 gro pl-14 pr-4 sm:py-3 transition-all"
+                type="number"
+                data-input=""
+                data-mortgageAmount=""
+              />
+              <div class="absolute top-[1px] left-[1px]">
+                <div
+                  class="bg-Slate100 w-fit py-2 sm:py-3 px-4 rounded-l-[5px] transition-all"
+                  data-border=""
+                >
+                  <i class="fas fa-pound-sign text-Slate700 transition-all"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-Red mt-[10px] hidden text-[14px]">
+              This field is required
+            </p>
+          </div>
+          <div class="flex flex-col gap-y-5 md:flex-row md:gap-x-5">
+            <div class="flex flex-col">
+              <label for="" class="text-Slate700">Mortgage Term</label>
+              <div class="relative w-full mt-2">
+                <input
+                  class="py-2 rounded-md w-full outline-none border border-Slate700 pr-[5.55rem] pl-4 sm:py-3 grou transition-all"
+                  type="number"
+                  data-input=""
+                  data-mortgageTerm=""
+                />
+                <div class="absolute top-[1px] right-[1px]">
+                  <div
+                    class="bg-Slate100 transition-all w-fit py-2 px-4 sm:py-3 rounded-r-[5px]"
+                    data-border=""
+                  >
+                    <i
+                      class="text-Slate700 transition-all font-[700] not-italic"
+                      >years</i
+                    >
+                  </div>
+                </div>
+              </div>
+              <p class="text-Red mt-[10px] hidden text-[14px]">
+                This field is required
+              </p>
+            </div>
+            <div class="flex flex-col">
+              <label for="" class="text-Slate700">Interest Rate</label>
+              <div class="relative w-full mt-2 group">
+                <input
+                  class="py-2 rounded-md w-full group-hover:border-Lime transition-all outline-none border border-Slate700 pr-16 pl-4 sm:py-3"
+                  type="number"
+                  data-input=""
+                  data-interestRate=""
+                />
+                <div class="absolute top-[1px] right-[1px]">
+                  <div
+                    class="bg-Slate100 group-hover:bg-Lime w-fit py-2 px-4 sm:py-3 rounded-r-[5px] transition-all"
+                    data-border=""
+                  >
+                    <i
+                      class="text-Slate700 group-hover:text-Slate900 font-[700] not-italic transition-all"
+                      >%</i
+                    >
+                  </div>
+                </div>
+              </div>
+              <p class="text-Red mt-[10px] hidden text-[14px]">
+                This field is required
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <label for="" class="text-Slate700">Mortgage Type</label>
+            <div class="mt-2 flex flex-col gap-y-3">
+              <div
+                class="flex items-center gap-x-4 border border-Slate700 py-2 sm:py-3 rounded-md px-5 cursor-pointer"
+                id="repayment"
+                data-radioDiv=""
+              >
+                <input
+                  type="radio"
+                  class="w-[18px] h-[18px] appearance-none bg-white border border-Slate900 rounded-full"
+                />
+                <p class="font-[700] text-Slate900 text-lg">Repayment</p>
+              </div>
+              <div
+                class="flex items-center gap-x-4 border border-Slate700 py-2 sm:py-3 rounded-md px-5 cursor-pointer"
+                id="interest"
+                data-radioDiv=""
+              >
+                <input
+                  type="radio"
+                  class="w-[18px] h-[18px] appearance-none bg-white border border-Slate900 rounded-full"
+                />
+                <p class="font-[700] text-Slate900 text-lg">Interest Only</p>
+              </div>
+            </div>
+            <p id="radioPara" class="text-Red mt-[10px] hidden text-[14px]">
+              This field is required
+            </p>
+          </div>
+          <button
+            class="flex items-center justify-center gap-x-3 bg-Lime w-full px-5 py-3 rounded-full cursor-pointer md:max-w-[300px]"
+            id="calculateButton"
+          >
+            <img src="assets/images/icon-calculator.svg" alt="" />
+            <p
+              class="font-[700] text-Slate900 text-lg sm:text-[16px] md:text-lg"
+            >
+              Calculate Repayments
+            </p>
+          </button>
+        </div>
+      </form>
+      <div
+        class="bg-Slate900 sm:w-[50%] sm:rounded-bl-[4rem] sm:rounded-r-2xl md:rounded-bl-[5rem] relative transition-all"
+      >
+        <div
+          class="flex flex-col items-center h-full justify-center text-center text-white py-10 sm:py-5 lg:py-10 px-5 lg:px-10"
+          id="default"
+        >
+          <img src="assets/images/illustration-empty.svg" alt="" />
+          <div class="mt-5">
+            <h1 class="font-[700] text-3xl tracking-wide">
+              Results shown here
+            </h1>
+            <p class="text-Slate500 mt-5 max-w-[450px]">
+              Complete the form and click “calculate repayments” to see what
+              your monthly repayments would be.
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col h-full justify-center sm:justify-start text-white py-10 sm:py-5 lg:py-10 px-5 lg:px-10 transition-all absolute top-0 hidden"
+          id="result"
+        >
+          <h1 class="font-[700] text-3xl tracking-wide">Your results</h1>
+          <p class="text-Slate500 mt-5 max-w-[450px]">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click “calculate
+            repayments” again.
+          </p>
+          <div
+            class="bg-[rgba(0_0_0/.2)] border-t-4 border-Lime py-5 px-5 rounded-lg mt-5 md:mt-10"
+          >
+            <div class="mb-5 md:mb-8">
+              <p class="text-Slate500">Your monthly repayments</p>
+              <div class="mt-2">
+                <div
+                  class="font-[700] text-4xl text-Lime flex items-center gap-x-[2px] md:gap-x-[3px] md:text-[2.5rem]"
+                >
+                  <i
+                    class="fas fa-pound-sign text-[1.9rem] md:text-[2.2rem] mt-[2px]"
+                  ></i
+                  ><span id="mortgage"></span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full h-[1px] bg-Slate700"></div>
+            <div class="mt-5 md:mt-8">
+              <p class="text-Slate500">Total you'll repay over the term</p>
+              <div class="mt-1">
+                <div
+                  class="font-[700] text-2xl text-white flex items-center gap-x-[2px]"
+                >
+                  <i class="fas fa-pound-sign text-[1.3rem] mt-0"></i
+                  ><span id="mortgageOverTerm"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
